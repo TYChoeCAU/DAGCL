@@ -1,0 +1,21 @@
+# DAGCL model default configuration
+reg_weight: 1e-04
+lambda: 0.2
+eps: 0.2
+temperature: 0.2
+layer_cl: 2
+n_layers: 3
+
+# degree-adaptive eps (Module 1)
+degree_adaptive_eps_alpha: 0.0
+degree_eps_min_scale: 0.5
+degree_eps_max_scale: 2.0
+
+# CL weight (Module 2)
+cl_head_weight: 1.0
+head_ratio_u: 0.0
+tail_ratio_u: 0.0
+
+# item CL weight (Module 3)
+item_cl_head_weight: 1.0
+item_head_ratio: 0.0

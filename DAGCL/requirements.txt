@@ -1,0 +1,26 @@
+# -------------------------------------------------------
+# DAGCL Requirements
+# Tested on: Python 3.10, CUDA 11.7, cuDNN 8.5
+# -------------------------------------------------------
+
+# PyTorch (CUDA 11.7)
+# pip install torch==1.13.1+cu117 --index-url https://download.pytorch.org/whl/cu117
+torch==1.13.1
+
+# PyTorch Geometric (install after torch)
+# pip install torch-scatter torch-sparse torch-geometric \
+#     -f https://data.pyg.org/whl/torch-1.13.1+cu117.html
+torch-scatter==2.1.1
+torch-sparse==0.6.17
+torch-geometric==2.5.2
+
+# RecBole
+recbole==1.1.1
+
+# Core dependencies
+numpy==1.25.2
+pandas==2.2.3
+scipy==1.10.1
+tqdm==4.67.3
+colorlog==4.7.2
+tensorboard==2.20.0
