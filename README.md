@@ -45,7 +45,7 @@ dataset/
 
 ```bash
 python run_recbole_gnn.py \
-  --model=DAGCL --dataset=gowalla --gpu_id=0 --seed=2020 \
+  --model=DAGCL --dataset=gowalla --gpu_id=0 --seed=2021 \
   --embedding_size=64 --n_layers=3 --layer_cl=2 \
   --lambda=0.1 --eps=0.2 --temperature=0.12 \
   --degree_adaptive_eps_alpha=1.5 \
@@ -56,34 +56,28 @@ python run_recbole_gnn.py \
   --show_progress=False --stopping_step=10
 ```
 
-### Ali
 
-```bash
-python run_recbole_gnn.py \
-  --model=DAGCL --dataset=ali --gpu_id=0 --seed=2020 \
-  --embedding_size=64 --n_layers=3 --layer_cl=2 \
-  --lambda=0.05 --eps=0.1 --temperature=0.15 \
-  --degree_adaptive_eps_alpha=1.0 \
-  --degree_eps_min_scale=0.5 --degree_eps_max_scale=3.0 \
-  --cl_head_weight=0.1 --head_ratio_u=0.1 \
-  --item_cl_head_weight=1.0 --item_head_ratio=0.0 \
-  --valid_metric=Recall@10 --topk=[10,20] \
-  --show_progress=False --stopping_step=10
-```
+### Hyperparameter Settings
 
-### Yelp2018
+| Dataset  | lambda | eps | temperature | degree_adaptive_eps_alpha | degree_eps_min_scale | degree_eps_max_scale | cl_head_weight | head_ratio_u | item_cl_head_weight | item_head_ratio |
+| -------- | -----: | --: | ----------: | ------------------------: | -------------------: | -------------------: | -------------: | -----------: | ------------------: | --------------: |
+| Gowalla  |    0.1 | 0.2 |        0.12 |                       1.5 |                  0.5 |                  3.0 |            0.2 |          0.3 |                 1.0 |             0.0 |
+| Ali      |   0.05 | 0.1 |        0.15 |                       1.0 |                  0.5 |                  3.0 |            0.1 |          0.1 |                 1.0 |             0.0 |
+| Yelp2018 |   0.05 | 0.1 |        0.15 |                       1.0 |                  0.5 |                  3.0 |            0.3 |          0.3 |                 1.0 |             0.0 |
 
-```bash
-python run_recbole_gnn.py \
-  --model=DAGCL --dataset=yelp2018 --gpu_id=0 --seed=2020 \
-  --embedding_size=64 --n_layers=3 --layer_cl=2 \
-  --lambda=0.05 --eps=0.1 --temperature=0.15 \
-  --degree_adaptive_eps_alpha=1.0 \
-  --degree_eps_min_scale=0.5 --degree_eps_max_scale=3.0 \
-  --cl_head_weight=0.3 --head_ratio_u=0.3 \
-  --item_cl_head_weight=1.0 --item_head_ratio=0.0 \
-  --valid_metric=Recall@10 --topk=[10,20] \
-  --show_progress=False --stopping_step=10
+The following settings are shared across all datasets.
+
+| Parameter      |     Value |
+| -------------- | --------: |
+| embedding_size |        64 |
+| n_layers       |         3 |
+| layer_cl       |         2 |
+| valid_metric   | Recall@10 |
+| topk           |   [10,20] |
+| show_progress  |     False |
+| stopping_step  |        10 |
+| seed           |      2021 |
+
 ```
 
 
